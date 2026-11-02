@@ -1,6 +1,6 @@
 # Magic Johnson
 
-Boutique en ligne de cartes à collectionner **Magic: The Gathering**, réalisée en équipe de 4 dans le cadre du projet intégrateur en techniques de l'informatique au Cégep de Granby (automne 2025).
+Boutique en ligne de cartes à collectionner **Magic: The Gathering**, réalisée en équipe de 5 dans le cadre du projet intégrateur en techniques de l'informatique au Cégep de Granby (automne 2025).
 
 > **Note sur l'historique** : le projet a été développé à l'origine sur **Azure DevOps** (dépôt Git, pull requests, pipelines). Ce dépôt GitHub en est une copie de la version finale. C'est pourquoi on n'y trouve pas l'historique des commits. Les identifiants et les clés ont été retirés de la configuration (voir [Configuration](#configuration)).
 
@@ -78,4 +78,4 @@ npm run dev
 
 ## Équipe
 
-Projet réalisé en équipe de 4. Dépôt publié par Yacine Bourezak ([GitHub](https://github.com/Yacine3111) · [LinkedIn](https://www.linkedin.com/in/yacine-bourezak)), qui s'est notamment occupé de l'importation des cartes, des tâches Quartz.NET, de l'intégration Stripe (paiements et remboursements), des promotions et de la configuration CORS.
+Projet réalisé en équipe de 5. Dépôt publié par Yacine Bourezak ([GitHub](https://github.com/Yacine3111) · [LinkedIn](https://www.linkedin.com/in/yacine-bourezak)), qui s'est notamment occupé de l'importation des cartes, des tâches Quartz.NET, de l'intégration Stripe (paiements et remboursements), des promotions et de la configuration CORS.

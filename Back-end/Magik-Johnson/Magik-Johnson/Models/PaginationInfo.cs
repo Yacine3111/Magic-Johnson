@@ -1,0 +1,9 @@
+﻿namespace Magik_Johnson.Models;
+
+public class PaginationInfo
+{
+    public int CurrentPage { get; set; }
+    public int PageSize { get; set; }
+    public int TotalCards { get; set; }
+    public int TotalPages { get; set; }
+}

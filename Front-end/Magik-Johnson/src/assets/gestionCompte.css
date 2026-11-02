@@ -1,0 +1,54 @@
+/*Buttons*/
+.edit-btn {
+  background: #8a422c !important;
+  color: white !important;
+}
+
+.save-btn {
+  background: #1976d2 !important;
+
+  color: white !important;
+  border: none !important;
+}
+
+.cancel-btn {
+  background: #d32f2f !important;
+
+  color: white !important;
+  border: none !important;
+}
+
+/*Headers*/
+h5 {
+  margin-bottom: 0 !important;
+  color: black;
+}
+
+/*Cards*/
+.info-card {
+  background: #f0eada !important;
+  color: black !important;
+}
+
+.title-card {
+  background: #f0eada !important;
+  color: black !important;
+}
+
+.title-2-card {
+  background: #f0eada !important;
+  color: black !important;
+}
+
+body.body--dark .info-card,
+body.body--dark .title-card,
+body.body--dark .title-2-card {
+  background: #1f2735 !important;
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1) !important;
+}
+
+body.body--dark h5,
+body.body--dark h6 {
+  color: white !important;
+}

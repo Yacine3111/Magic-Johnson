@@ -1,0 +1,38 @@
+{
+  "name": "magik-johnson",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "vite build --mode development --base=/",
+    "build:staging": "vite build --mode staging --base=/2288656",
+    "build:prod": "vite build --mode production --base=/2372384",
+    "preview": "vite preview",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.17.0",
+    "@quasar/vite-plugin": "^1.10.0",
+    "@stripe/stripe-js": "^8.3.0",
+    "axios": "^1.11.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.5.0",
+    "vue": "^3.5.18",
+    "vue-cookies": "^1.8.6",
+    "vue-router": "^4.5.1",
+    "vue-the-mask": "^0.11.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "prettier": "3.6.2",
+    "sass-embedded": "^1.92.1",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0"
+  }
+}

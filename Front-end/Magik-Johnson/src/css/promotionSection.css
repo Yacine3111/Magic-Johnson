@@ -1,0 +1,660 @@
+/* Classes utilitaires */
+.hidden {
+  display: none !important;
+}
+
+.no-bootstrap * {
+  all: unset !important;
+}
+
+.no-bootstrap {
+  font-family: inherit;
+  line-height: normal;
+}
+
+.promo-left-column {
+  padding-left: 2rem !important;
+  padding-right: 1rem !important;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  padding-top: 40px;
+}
+
+.promo-title-section {
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.promo-description-section {
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.promo-title-section p,
+.promo-description-section p {
+  text-align: left;
+}
+
+.container_button_offre {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  padding-left: 2rem;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container_button_offre :deep(.button_voir_plus_offre) {
+  background-color: #ddd7c7;
+  color: black;
+  white-space: nowrap;
+  text-align: left;
+  line-height: 1.3;
+  padding: 8px 12px;
+  min-width: auto;
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+  margin-left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titre_promotion {
+  text-decoration: underline;
+  margin-left: 20px;
+  position: relative;
+  left: 10px;
+  top: -5px;
+}
+
+.caroussel_exterieur {
+  background-color: #d1cbbb;
+}
+
+.carousel-center-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.caroussel_interieur {
+  background-color: #ddd7c7;
+  padding: 20px;
+  width: 100%;
+}
+
+.text_offres_special {
+  font-size: 22px;
+  position: relative;
+  animation-name: leftToRight;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes leftToRight {
+  0% {
+    left: -30px;
+    top: 0px;
+  }
+  50% {
+    left: 30px;
+    top: 0px;
+  }
+  100% {
+    left: -30px;
+    top: 0px;
+  }
+}
+
+.caroussel_interieur :deep(.q-carousel__navigation) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caroussel_interieur {
+  position: relative;
+  overflow: hidden;
+}
+
+.caroussel_interieur :deep(.q-carousel) {
+  position: relative;
+  overflow: hidden;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute !important;
+  z-index: 100 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow--up),
+.caroussel_interieur :deep(.q-carousel__arrow--down) {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow--up) {
+  top: 0 !important;
+  bottom: auto !important;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow--down) {
+  bottom: 0 !important;
+  top: auto !important;
+}
+
+.caroussel_interieur :deep(.q-btn__content) {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow .q-btn__content) {
+  opacity: 1 !important;
+}
+
+.caroussel_interieur :deep(.q-btn--dense.q-btn--round) {
+  padding: 1px !important;
+  height: 1.4em;
+  width: 1.4em;
+  min-height: 0em !important;
+  min-width: 0em !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow .q-btn) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow .q-btn .q-btn__content) {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.caroussel_interieur :deep(.q-carousel__arrow .q-icon) {
+  font-size: 18px;
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caroussel_interieur :deep(.q-btn .q-icon),
+.caroussel_interieur :deep(.q-btn .q-spinner) {
+  font-size: 17.5px;
+  vertical-align: middle;
+  line-height: 1;
+  margin: 0;
+}
+
+.q-carousel :deep(.q-carousel__navigation) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.q-carousel :deep(.q-carousel__navigation .q-btn) {
+  margin: 5px 6px !important;
+  padding: 0 !important;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.q-carousel :deep(.q-carousel__navigation .q-btn .q-btn__content) {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.q-carousel :deep(.q-carousel__arrow) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.q-carousel :deep(.q-carousel__arrow .q-btn) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.q-carousel :deep(.q-carousel__arrow .q-btn .q-btn__content) {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.q-carousel :deep(.q-carousel__arrow .q-btn .q-icon) {
+  font-size: 1.715em;
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.q-carousel :deep(.q-btn .q-icon),
+.q-carousel :deep(.q-btn .q-spinner) {
+  font-size: 1.715em;
+  line-height: 1;
+  margin: 0;
+}
+
+.q-carousel :deep(.q-carousel__arrow .q-btn > *) {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* STYLES MOBILE */
+.titre_promotion {
+  text-decoration: underline;
+  margin-left: 20px;
+  position: relative;
+  left: 10px;
+  top: -5px;
+}
+
+.promotionSection_container {
+  width: 99%;
+  padding: 5px;
+  margin: 7px;
+}
+
+.mobile-promotion {
+  background-color: #f5f5f5;
+}
+
+.mobile-carousel {
+  background-color: #d1cbbb;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0px;
+}
+.mobile-carousel > * {
+  position: relative;
+  bottom: 5px;
+  margin: 0px;
+}
+
+.mobile-inner {
+  background-color: #ddd7c7;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.mobile-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+
+.mobile-promo-header {
+  text-align: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.mobile-promo-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+  position: relative;
+  animation-name: leftToRight;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+.mobile-promo-description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.mobile-inner-carousel {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-card-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.mobile-voir-plus {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+}
+
+/* Le bouton garde l'apparence desktop */
+.mobile-voir-plus .button_voir_plus_offre {
+  background-color: #ddd7c7 !important;
+  color: rgb(0, 0, 0) !important;
+  position: relative;
+  right: 1px;
+  width: 100% !important;
+  max-width: 300px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 0 auto;
+  white-space: nowrap !important;
+}
+.mobile-voir-plus > button:nth-child(1) {
+  font-size: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .mobile-slide {
+    padding: 15px;
+  }
+
+  .mobile-promo-title {
+    font-size: 1.3rem;
+  }
+
+  .mobile-promo-description {
+    font-size: 0.9rem;
+  }
+
+  .mobile-voir-plus {
+    margin-top: 15px;
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-slide {
+    padding: 10px;
+  }
+
+  .mobile-promo-title {
+    font-size: 1.2rem;
+  }
+
+  .mobile-promo-description {
+    font-size: 0.85rem;
+  }
+
+  .mobile-voir-plus {
+    margin-top: 60px;
+    top: 0;
+  }
+
+  .mobile-voir-plus .button_voir_plus_offre {
+    max-width: 280px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+.auto-height-carousel {
+  height: auto !important;
+}
+
+.auto-height-carousel .q-carousel__slide,
+.auto-height-carousel .q-panel-parent,
+.auto-height-carousel .q-carousel__slides-container {
+  height: auto !important;
+  min-height: 250px;
+  overflow: visible !important;
+}
+
+.mobile-inner-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobile-nav-btn {
+  font-size: 1.5rem;
+  z-index: 10;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-card-btn {
+  left: -10px;
+}
+
+.next-card-btn {
+  right: -10px;
+}
+
+.mobile-inner {
+  margin: 0 35px;
+}
+
+.countDown_text {
+  color: red;
+  font-weight: bold;
+}
+.countDown_label_text {
+  color: black;
+}
+
+/* Animation des cartes mobiles */
+.mobile-card-content {
+  transition: all 0.3s ease-in-out;
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Animation d'entrée des cartes */
+@keyframes slideInUp {
+  from {
+    transform: translateY(0);
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Animation des images de cartes */
+.mobile-card-image {
+  transition: all 0.3s ease-in-out;
+  animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation des boutons mobiles */
+.mobile-btn {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-btn:active {
+  transform: scale(0.95);
+}
+
+.mobile-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+/* Animation du countdown */
+.mobile-countdown {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation des prix */
+.mobile-price {
+  animation: priceGlow 3s infinite;
+}
+
+@keyframes priceGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  }
+}
+
+/* Animation du carousel mobile */
+.mobile-carousel {
+  animation: carouselSlide 0.5s ease-out;
+}
+
+@keyframes carouselSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation des slides mobiles */
+.mobile-slide {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skeleton Styles */
+.promotion-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 130px;
+  height: auto;
+  display: inline-block;
+}
+
+.promotion-card-info {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+}

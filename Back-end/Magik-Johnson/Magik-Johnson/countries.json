@@ -1,0 +1,77 @@
+[
+  {
+    "code2": "CA",
+    "code3": "CAN",
+    "name": "Canada",
+    "capital": "Ottawa",
+    "region": "Americas",
+    "subregion": "Northern America",
+    "states": [
+      {
+        "code": "AB",
+        "name": "Alberta",
+        "subdivision": "province"
+      },
+      {
+        "code": "BC",
+        "name": "Colombie britannique",
+        "subdivision": "province"
+      },
+      {
+        "code": "MB",
+        "name": "Manitoba",
+        "subdivision": "province"
+      },
+      {
+        "code": "NB",
+        "name": "Nouveau-Brunswick",
+        "subdivision": "province"
+      },
+      {
+        "code": "NL",
+        "name": "Terre-Neuve-et-Labrador",
+        "subdivision": "province"
+      },
+      {
+        "code": "NS",
+        "name": "Nouvelle-Écosse",
+        "subdivision": "province"
+      },
+      {
+        "code": "ON",
+        "name": "Ontario",
+        "subdivision": "province"
+      },
+      {
+        "code": "PE",
+        "name": "Île-du-Prince-Édouard",
+        "subdivision": "province"
+      },
+      {
+        "code": "QC",
+        "name": "Québec",
+        "subdivision": "province"
+      },
+      {
+        "code": "SK",
+        "name": "Saskatchewan",
+        "subdivision": "province"
+      },
+      {
+        "code": "NT",
+        "name": "Territoires du Nord-Ouest",
+        "subdivision": "territory"
+      },
+      {
+        "code": "NU",
+        "name": "Nunavut",
+        "subdivision": "territory"
+      },
+      {
+        "code": "YT",
+        "name": "Yukon",
+        "subdivision": "territory"
+      }
+    ]
+  }
+]

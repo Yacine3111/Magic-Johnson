@@ -1,0 +1,217 @@
+body,
+html {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.inscription {
+  margin-left: 2%;
+}
+
+#app {
+  height: 100vh;
+}
+
+.inscription_title {
+  margin-bottom: 2rem;
+  margin-top: 50px;
+  color: #ba9461;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-control {
+  border-radius: 4px;
+  padding: 0 12px;
+  font-weight: 500;
+  width: 100%;
+  height: 42px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.form-label {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  width: 100% !important;
+  align-items: stretch;
+}
+
+.input-group .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex: 1;
+  width: auto;
+}
+
+.btn-eye {
+  border-color: #ccc;
+  color: gray;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+.btn-eye:hover {
+  background-color: transparent;
+  color: black;
+}
+
+body:not(.body--dark) .form-control {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+body:not(.body--dark) .btn-eye {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-left: none;
+  color: black;
+}
+
+body.body--dark .form-control {
+  background-color: #455a64;
+  color: white;
+  border: 1px solid #455a64;
+}
+
+body.body--dark .btn-eye {
+  background-color: #455a64;
+  border: 1px solid #455a64;
+  border-left: none;
+  color: white;
+}
+
+body.body--dark input:-webkit-autofill,
+body.body--dark input:-webkit-autofill:hover,
+body.body--dark input:-webkit-autofill:focus,
+body.body--dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #455a64 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.firstnameErrorMessage,
+.nameErrorMessage,
+.emailErrorMessage,
+.phoneNumberErrorMessage,
+.passwordErrorMessage,
+.passwordConfirmationErrorMessage,
+body.body--dark .firstnameErrorMessage,
+body.body--dark .nameErrorMessage,
+body.body--dark .emailErrorMessage,
+body.body--dark .phoneNumberErrorMessage,
+body.body--dark .passwordErrorMessage,
+body.body--dark .passwordConfirmationErrorMessage {
+  color: red !important;
+}
+
+.page-inscription {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  width: 100%;
+  margin: 0;
+  justify-content: start;
+}
+
+body:not(.body--dark) .page-inscription {
+  background-color: #d1cbbb;
+  color: black;
+}
+
+body.body--dark .page-inscription {
+  background-color: #2d3c49;
+  color: white;
+}
+
+body:not(.body--dark) .text-adaptive {
+  color: black !important;
+}
+
+body.body--dark .text-adaptive {
+  color: white !important;
+}
+
+.btn-register {
+  background-color: #cde8fd !important;
+  color: black !important;
+  font-weight: bold;
+  border: none;
+}
+
+body.body--dark .btn-register {
+  color: black !important;
+}
+
+.img-logo {
+  width: 100%;
+}
+
+.firstname-error,
+.name-error,
+.email-error,
+.phoneNumber-error,
+.password-error,
+.passwordConfirmation-error {
+  border: 2px solid red !important;
+}
+
+.no-account {
+  color: lightgray;
+}
+
+body:not(.body--dark) .no-account {
+  color: #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  .inscription {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 1.5rem;
+  }
+
+  .inscription_title {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1023.5px) {
+  .vertical-line,
+  .img-presentation {
+    display: none;
+  }
+
+  .page-inscription {
+    justify-content: center;
+  }
+
+  .img-logo {
+    display: none;
+  }
+}
+
+.vertical-line {
+  margin-left: 3%;
+  margin-top: 50px;
+  height: 500px;
+}
+
+body:not(.body--dark) .vertical-line {
+  border-left: 6px solid #a89c8d;
+}
+
+body.body--dark .vertical-line {
+  border-left: 6px solid #f0eada;
+}
+
+

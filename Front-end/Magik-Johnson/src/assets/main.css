@@ -1,0 +1,11 @@
+* {
+  font-family: 'lucida console', 'monospace';
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: auto !important;
+}

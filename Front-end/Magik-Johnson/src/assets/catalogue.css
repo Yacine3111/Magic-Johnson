@@ -1,0 +1,1422 @@
+img.mtg-card-img,
+img.catalog-card-image,
+img.mobile-card-image,
+img.promotion-card-image,
+img.card_image,
+.image-wrapper img,
+.image-wrapper-mobile img,
+.mobile-card-image-container img,
+.promotion-card-content img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Le truc blanc entre la page filtre et 6 résultats trouvés */
+.separator {
+  border: 1px;
+  height: 2px;
+  background-color: white;
+  margin: 1.5rem 0;
+}
+
+.q-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.q-page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* La couleur derrière l'espace où on voit les différentes cartes */
+.page-behind {
+  background-color: #d1cbbb;
+  min-height: 100vh;
+  color: black;
+}
+
+/* ================================= barre de recherche =============================== */
+.search-container {
+  width: 100%;
+  padding: 2rem 0;
+  background: #a89c8d;
+}
+
+.search-btn {
+  background-color: rgb(240, 234, 218) !important;
+  border: none;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ca me casse les couilles donc important reste */
+.search-container .input-group {
+  width: 70% !important;
+}
+
+/* Wrapper pour la barre de recherche avec suggestions */
+.search-wrapper {
+  position: relative;
+}
+
+/* Dropdown des suggestions */
+.search-suggestions {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: white !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1050 !important;
+  margin-top: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+  pointer-events: auto;
+}
+
+/* Style de la scrollbar pour WebKit (Chrome, Safari, Edge) */
+.search-suggestions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+  color: #333;
+  font-size: 14px;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+/* ================== Mode Sombre pour les suggestions ================== */
+body.body--dark .search-suggestions {
+  background: #1f2735 !important;
+  border-color: #2d3748 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.body--dark .suggestion-item {
+  color: #fff;
+  border-bottom: 1px solid #2d3748;
+}
+
+body.body--dark .suggestion-item:hover {
+  background-color: #2d3748;
+}
+
+/* Scrollbar sombre pour les suggestions */
+body.body--dark .search-suggestions {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #1f2735;
+}
+
+body.body--dark .search-suggestions::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.body--dark .search-suggestions::-webkit-scrollbar-track {
+  background: #1f2735;
+  border-radius: 4px;
+}
+
+body.body--dark .search-suggestions::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+body.body--dark .search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Styles pour mobile */
+.mobile-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.mobile-search-suggestions {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: white !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1050 !important;
+  margin-top: 4px;
+}
+
+/* ================================= barre verticale à gauche =============================== */
+.sidebar {
+  background-color: #a89c8d;
+  position: fixed;
+  top: 0;
+  left: -420px;
+  width: 400px;
+  height: 100vh;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  font-family: 'Lucida Console', monospace;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+  padding: 1.5rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Design du scroll */
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* ================================= Checkboxes =============================== */
+.sidebar input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border: 2px solid #2d3748;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-right: 1rem;
+  vertical-align: middle;
+  transform: scale(1);
+}
+
+.sidebar input[type='checkbox']:hover {
+  background-color: #e2e8f0;
+}
+
+.sidebar input[type='checkbox']:checked {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  animation: pop 0.2s ease forwards;
+}
+
+.sidebar input[type='checkbox']:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  transform: scale(0);
+  animation: pop-check 0.2s ease forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-check {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar div:not(.sidebar-checkbox-item) {
+  margin-bottom: 0.8rem;
+}
+
+.sidebar .sidebar-checkbox-item {
+  margin-bottom: 0;
+}
+
+.sidebar-header {
+  position: sticky;
+  top: 0;
+  background-color: #a89c8d;
+  z-index: 100;
+  padding: 1rem 1.5rem;
+  padding-bottom: 0.5rem;
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sidebar-header h5 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  color: #ff6b35;
+  transform: scale(1.1);
+}
+
+.sidebar-content {
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ================== Filtres actifs : mise en page ================== */
+.active-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #d1cbbb;
+  padding: 1.2rem;
+  border-radius: 8px;
+  gap: 0.5rem;
+}
+
+.active-filters .filters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.active-filters .filter-btn {
+  background-color: #2d3748;
+  color: #fff;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.active-filters .filter-btn:hover {
+  background-color: #4a5568;
+}
+
+.active-filters .filter-btn .remove {
+  margin-left: 0.4rem;
+  color: #e53e3e;
+  cursor: pointer;
+}
+
+.active-filters .reset-btn {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.active-filters .reset-btn:hover {
+  background-color: #c53030;
+}
+
+/* ================== Clickable Sidebar Checkbox Items ================== */
+.sidebar-checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+}
+
+.sidebar-checkbox-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.sidebar-checkbox-item:active {
+  background-color: #4a5568;
+  transform: translateX(2px);
+}
+
+/* Empêche propagation de l'événement sur checkbox */
+.sidebar-checkbox-item input[type='checkbox'] {
+  margin-right: 0.75rem;
+  pointer-events: none;
+}
+
+/* Barre orange à gauche */
+.sidebar-checkbox-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(45deg, #ff6b35, #f7971e);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-checkbox-item:hover::before {
+  opacity: 1;
+}
+
+/* Style pour les éléments sélectionnés */
+.sidebar-checkbox-item.selected {
+  background-color: rgba(255, 107, 53, 0.1);
+  border-left: 3px solid #ff6b35;
+}
+
+.sidebar-checkbox-item.selected::before {
+  opacity: 1;
+}
+
+/* Ajustements pour les conteneurs avec scroll */
+.sidebar-list-container {
+  position: relative;
+}
+
+.sidebar-list-container.with-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+  margin-right: 12px;
+}
+
+/* Scrollbar pour les listes */
+.sidebar-list-container.with-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-list-container.with-scroll::-webkit-scrollbar-thumb {
+  background-color: #718096;
+  border-radius: 3px;
+}
+
+.sidebar-list-container.with-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}
+
+.sidebar-list-container.with-scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Styles pour les titres */
+.fw-bold {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Styles pour le texte */
+.text-light {
+  color: #f8f9fa;
+}
+
+/* Styles pour le padding */
+.p-3 {
+  padding: 1rem;
+}
+
+/* ================== Nouveaux filtres sidebar ================== */
+.price-range-container {
+  padding: 0.5rem 0;
+}
+
+.price-range-container input {
+  background-color: #fff;
+  border: 1px solid #cbd5e0;
+  color: #2d3748;
+  border-radius: 4px;
+}
+
+.price-range-container input:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 0.2rem rgba(99, 179, 237, 0.25);
+}
+
+.price-range-container input::placeholder {
+  color: #666 !important;
+}
+
+.quick-sort-container {
+  padding: 0.5rem 0;
+}
+
+.quick-sort-container .btn {
+  text-align: left;
+  border-color: #4a5568;
+  transition: all 0.2s ease;
+}
+
+.quick-sort-container .btn:hover {
+  background-color: #4a5568;
+  border-color: #63b3ed;
+}
+
+.quick-sort-container .btn.active {
+  background-color: #3182ce;
+  border-color: #3182ce;
+  color: #fff;
+}
+
+.quick-sort-container .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ================================= Carte Magic Affichage =============================== */
+.mtg-card {
+  display: flex;
+  background: #f8f5f0;
+  border-radius: 12px;
+  border-color: #000;
+  border-style: solid;
+  padding: 0.8rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  min-height: 220px;
+  height: 100%;
+}
+
+.mtg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image wrapper pour l'effet foil */
+.image-wrapper {
+  position: relative;
+  width: 110px;
+  min-width: 110px;
+  flex-shrink: 0;
+  height: 154px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mtg-card-img {
+  width: 100%;
+  height: 154px;
+  object-fit: cover;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Effet foil */
+.foil-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 255, 0.15),
+    rgba(0, 255, 255, 0.15),
+    rgba(255, 255, 0, 0.15),
+    rgba(255, 0, 255, 0.15)
+  );
+  background-size: 400% 400%;
+  animation: foilShine 3s ease infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.foil-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2) 50%, transparent);
+  animation: lightSweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes foilShine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    left: 0%;
+    opacity: 1;
+  }
+
+  25% {
+    left: 80%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 80%;
+    opacity: 0;
+  }
+}
+
+/* Tout le truc à droite de l'image de la carte */
+.mtg-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 154px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Nom de la carte */
+.mtg-card-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
+  max-height: 3.9em;
+  min-height: 1.3em;
+}
+
+/* Série, set */
+.mtg-card-serie {
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 1.2em;
+}
+
+/* Prix */
+.mtg-card-price {
+  margin: 0.4rem 0;
+}
+
+/* Ancien prix */
+.mtg-card-old {
+  color: black;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+/* Nouveau prix */
+.mtg-card-new {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 0.4rem;
+}
+
+/* Prix sans rabais  */
+.mtg-card-new.no-discount {
+  color: black;
+}
+
+/* Prix avec rabais */
+.mtg-card-new.discounted {
+  color: red;
+}
+
+.mtg-card-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+  flex-shrink: 0;
+  min-height: 32px;
+}
+
+.mtg-card-actions .btn {
+  border-radius: 6px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.2s ease;
+}
+
+.mtg-card-actions .btn:hover {
+  background-color: #fff;
+  color: #2c3e50;
+  border: 1px solid #2c3e50;
+}
+
+/* ================== Dropdown Checkboxes ================== */
+.dropdown-checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+  padding: 0.4rem 0.2rem;
+  word-break: break-word;
+}
+
+.dropdown-checkbox-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-checkbox-item input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 2px solid #2d3748;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-right: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.dropdown-checkbox-item input[type='checkbox']:hover {
+  background-color: #e2e8f0;
+}
+
+.dropdown-checkbox-item input[type='checkbox']:checked {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  animation: pop 0.2s ease forwards;
+}
+
+.dropdown-checkbox-item input[type='checkbox']:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  transform: scale(0);
+  animation: pop-check 0.2s ease forwards;
+}
+
+.filters-bar .dropdown-menu {
+  padding: 0.8rem;
+  background-color: #2d3748;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  width: max-content;
+  max-width: 400px;
+}
+
+/* ================== Pagination Quasar ================== */
+.q-pagination {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.q-pagination .q-btn {
+  background-color: #2d3748;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  margin: 0 2px;
+}
+
+.q-pagination .q-btn:hover {
+  background-color: #4a5568;
+}
+
+.q-pagination .q-btn.active {
+  background-color: #1e40af;
+}
+
+.q-pagination .q-btn.disabled {
+  opacity: 0.5;
+}
+
+.q-pagination .q-btn .q-icon {
+  color: #fff;
+}
+
+/* ================== TRI ================== */
+.form-select-sm {
+  background-color: #2d3748;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.form-select-sm:focus {
+  background-color: #2d3748;
+  color: #fff;
+  border-color: #f0eada;
+  box-shadow: 0 0 0 0.25rem rgba(240, 234, 218, 0.25);
+}
+
+.form-select-sm option {
+  background-color: #2d3748;
+  color: #fff;
+}
+
+/* Styles pour la recherche dans les dropdowns */
+.dropdown-search {
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  background-color: #2d3748;
+  z-index: 1;
+}
+
+.dropdown-search input {
+  background-color: #1f2735;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.dropdown-search input:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.25);
+}
+
+/* Conteneur pour les listes avec défilement */
+.dropdown-list-container {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.sidebar-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.sidebar-list-container.with-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Styles pour la barre de défilement */
+.dropdown-list-container::-webkit-scrollbar,
+.sidebar-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-list-container::-webkit-scrollbar-thumb,
+.sidebar-list-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.dropdown-list-container::-webkit-scrollbar-thumb:hover,
+.sidebar-list-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Styles pour les inputs de recherche dans la sidebar */
+.sidebar input[type='text'] {
+  background-color: #232a38;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.sidebar input[type='text']:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.25);
+}
+
+/* ================== STYLES MOBILES ================== */
+@media (max-width: 768px) {
+  /* Barre de recherche */
+  .search-container {
+    padding: 1rem 0;
+  }
+
+  .mobile-search {
+    width: 90% !important;
+  }
+
+  w .search-input {
+    font-size: 0.9rem;
+  }
+
+  /* Barre de filtres */
+  .filters-bar {
+    flex-wrap: wrap;
+    padding: 0.8rem;
+  }
+
+  .filters-bar .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .mobile-sort {
+    margin-left: auto;
+  }
+
+  /* Sidebar */
+  chevauchement */ .sidebar.mobile {
+    padding-top: 0;
+  }
+
+  .sidebar.mobile.active {
+    left: 0;
+  }
+
+  /* Overlay pour fermer le sidebar */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+
+  /* Bouton de fermeture */
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* Sidebar header */
+  .sidebar-header {
+    position: sticky;
+    top: 0;
+    background-color: #1f2735;
+    z-index: 100;
+    padding: 1rem 1.5rem;
+    padding-bottom: 0.5rem;
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .sidebar-header h5 {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .sidebar-content {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 481px) {
+    .sidebar.mobile {
+      width: 75%;
+      left: -75%;
+    }
+  }
+
+  /* Pour petits mobiles (moins de 480px de large) */
+  @media (max-width: 480px) {
+    .sidebar.mobile {
+      width: 95%;
+      left: -95%;
+    }
+  }
+
+  /* Pagination */
+  .q-pagination {
+    margin-top: 1.5rem;
+  }
+
+  .q-pagination .q-btn {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+.search-input::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.dropdown-search input::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.form-control-sm::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.filter-search-input::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.search-input :deep(.q-field__native)::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+.mobile-search-input :deep(.q-field__native)::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   DARK MODE 
+   ========================================================================== */
+
+/* Main Background */
+body.body--dark .page-catalogue-light {
+  background-color: rgb(35, 42, 56) !important;
+  color: #fff !important;
+}
+
+/* Sidebar */
+body.body--dark .sidebar {
+  background-color: #1f2735;
+}
+
+body.body--dark .sidebar-header {
+  background-color: #1f2735;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.body--dark .sidebar-header h5 {
+  color: #fff;
+}
+
+body.body--dark .active-filters {
+  background-color: #1f2735;
+}
+
+/* Filters Bar */
+body.body--dark .filters-bar {
+  background-color: rgb(35, 42, 56) !important;
+}
+
+body.body--dark .filters-bar .text-dark {
+  color: #fff !important;
+}
+
+/* Search Container */
+body.body--dark .custom-search-bg {
+  background: rgb(35, 42, 56) !important;
+}
+
+/* Inputs & Checkboxes sidebar */
+body.body--dark .sidebar input[type='checkbox'] {
+  background-color: #232a38;
+  border: 2px solid #000;
+}
+
+body.body--dark .sidebar input[type='checkbox']:hover {
+  background-color: #3b4456;
+}
+
+body.body--dark .sidebar input[type='checkbox']:checked {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+body.body--dark .price-range-container input {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  color: #fff;
+}
+
+body.body--dark .form-control {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  color: #fff;
+}
+
+body.body--dark .form-control::placeholder {
+  color: #a0aec0 !important;
+}
+
+/* Text Colors */
+body.body--dark .text-dark {
+  color: #fff !important;
+}
+
+body.body--dark .sidebar .fw-bold {
+  color: #fff;
+}
+
+body.body--dark .sidebar {
+  color: #f8f9fa;
+}
+
+body.body--dark .mtg-card {
+  background-color: #25334d !important;
+  color: #fff !important;
+}
+
+body.body--dark .mtg-card-title {
+  color: #fff !important;
+}
+
+body.body--dark .mtg-card-serie {
+  color: #a0aec0 !important;
+}
+
+body.body--dark .mtg-card-new.no-discount {
+  color: #fff !important;
+}
+
+body.body--dark .mtg-card-old {
+  color: #a0aec0 !important;
+}
+
+body.body--dark .mtg-card-new.discounted {
+  color: #fc8181 !important;
+}
+
+body.body--dark .dropdown-checkbox-item input[type='checkbox'] {
+  background-color: #232a38;
+  border: 2px solid #000;
+}
+
+body.body--dark .dropdown-checkbox-item input[type='checkbox']:checked {
+  background-color: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+body.body--dark .dropdown-checkbox-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.body--dark .text-center {
+  color: #fff !important;
+}
+
+body.body--dark .separator {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.body--dark .sidebar-checkbox-item input[type='checkbox'] {
+  background-color: #232a38;
+  border: 2px solid #000;
+}
+
+body.body--dark .sidebar-checkbox-item input[type='checkbox']:checked {
+  background-color: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+body.body--dark .sidebar-checkbox-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  /* Main Background */
+  .page-catalogue-light {
+    background-color: #d1cbbb;
+    color: black;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background-color: #a89c8d;
+    color: #000;
+  }
+
+  .sidebar-header {
+    background-color: #a89c8d;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar-header h5 {
+    color: #000;
+  }
+
+  .active-filters {
+    background-color: #a89c8d;
+  }
+
+  /* Filters Bar (Top) */
+  .filters-bar {
+    background-color: #a89c8d;
+  }
+
+  .filters-bar .text-dark {
+    color: #000;
+  }
+
+  /* Search Container override */
+  .custom-search-bg {
+    background: #a89c8d;
+  }
+
+  /* Inputs & Checkboxes in Sidebar */
+  .sidebar input[type='checkbox'] {
+    background-color: #fff;
+    border: 2px solid #2d3748;
+  }
+
+  .sidebar input[type='checkbox']:hover {
+    background-color: #e2e8f0;
+  }
+
+  .sidebar input[type='checkbox']:checked {
+    background-color: #1e40af;
+    border-color: #1e40af;
+  }
+
+  .price-range-container input {
+    background-color: #fff;
+    border: 1px solid #cbd5e0;
+    color: #2d3748;
+  }
+
+  .form-control {
+    background-color: #fff;
+    border: 1px solid #cbd5e0;
+    color: #2d3748;
+  }
+
+  .form-control::placeholder {
+    color: #666;
+  }
+
+  /* Text Colors */
+  .text-dark {
+    color: #000;
+  }
+
+  .sidebar .fw-bold {
+    color: #000;
+  }
+
+  /* Dropdown Checkboxes in Filters Bar */
+  .dropdown-checkbox-item input[type='checkbox'] {
+    background-color: #fff !important;
+    border: 2px solid #2d3748 !important;
+  }
+
+  .dropdown-checkbox-item:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Loading/Empty States */
+  .text-center {
+    color: #000 !important;
+  }
+
+  /* Separator */
+  .separator {
+    background-color: #2d3748 !important;
+  }
+
+  /* Pagination */
+}
+
+/* Search Suggestions Dark Mode */
+body.body--dark .search-suggestions {
+  background-color: #232a38 !important;
+  border-color: #4a5568 !important;
+  color: #ffffff !important;
+}
+
+body.body--dark .suggestion-item {
+  color: #ffffff !important;
+  border-bottom: 1px solid #4a5568 !important;
+}
+
+body.body--dark .suggestion-item:hover {
+  background-color: #2d3748;
+}
+
+/* Search Input Defaults (Light Mode) */
+.search-input {
+  color: black !important;
+  background-color: white !important;
+}
+
+.search-input::placeholder {
+  color: #666 !important;
+}
+
+/* Page Promotion / Catalogue Behind Background */
+body.body--dark .page-behind {
+  background-color: rgb(35, 42, 56) !important;
+  color: #fff !important;
+}
+
+/* Promotion Header */
+.promotion-header {
+  background-color: #a89c8d !important;
+  color: #000 !important;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.body--dark .promotion-header {
+  background-color: #1f2735 !important;
+  color: #fff !important;
+}
+
+/* Search Container Dark Mode */
+body.body--dark .search-container {
+  background: linear-gradient(to bottom, rgb(35, 42, 56), #707f8b) !important;
+}
+
+/* Filters Bar */
+.filters-bar {
+  background-color: #a89c8d;
+  color: black;
+}
+
+body.body--dark .filters-bar {
+  background-color: rgb(35, 42, 56) !important;
+  color: #fff !important;
+}
+
+/* Separator Dark Mode */
+.separator {
+  background-color: #2d3748;
+}
+
+body.body--dark .separator {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
